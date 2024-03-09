@@ -1,0 +1,86 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CommandTable xmlns="http://schemas.microsoft.com/VisualStudio/2005-10-18/CommandTable" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+	<Extern href="stdidcmd.h"/>
+	<Extern href="vsshlids.h"/>
+	<Include href="KnownImageIds.vsct"/>
+	<Include href="VSGlobals.vsct"/>
+
+	<Commands package="CaseConverter">
+		<Menus>
+			<Menu guid="CaseConverter" id="EditMenu" priority="0x0600" type="Menu">
+				<Parent guid="CaseConverter" id="CTXT_CODEWIN_GRP"/>
+				<CommandFlag>DynamicVisibility</CommandFlag>
+				<Strings>
+					<ButtonText>Text Convert</ButtonText>
+				</Strings>
+			</Menu>
+		</Menus>
+
+		<Groups>
+			<Group guid="CaseConverter" id="MenuGroup" priority="0x0600">
+				<Parent guid="CaseConverter" id="EditMenu"/>
+			</Group>
+			<Group guid="CaseConverter" id="CTXT_CODEWIN_GRP" priority="0x0600">
+				<Parent guid="guidSHLMainMenu" id="IDM_VS_CTXT_CODEWIN"/>
+			</Group>
+		</Groups>
+
+		<Buttons>
+			<Button guid="CaseConverter" id="ToUpper" priority="0x0100" type="Button">
+				<Parent guid="CaseConverter" id="MenuGroup" />
+				<Icon guid="ImageCatalogGuid" id="WordWrap" />
+				<CommandFlag>IconIsMoniker</CommandFlag>
+				<Strings>
+					<ButtonText>Upper Case</ButtonText>
+					<LocCanonicalName>.CaseConverter.ToUpper</LocCanonicalName>
+				</Strings>
+			</Button>
+			<Button guid="CaseConverter" id="ToLower" priority="0x0100" type="Button">
+				<Parent guid="CaseConverter" id="MenuGroup" />
+				<Icon guid="ImageCatalogGuid" id="WordWrap" />
+				<CommandFlag>IconIsMoniker</CommandFlag>
+				<Strings>
+					<ButtonText>Lower Case</ButtonText>
+					<LocCanonicalName>.CaseConverter.ToLower</LocCanonicalName>
+				</Strings>
+			</Button>
+			<Button guid="CaseConverter" id="ToCamel" priority="0x0100" type="Button">
+				<Parent guid="CaseConverter" id="MenuGroup" />
+				<Icon guid="ImageCatalogGuid" id="WordWrap" />
+				<CommandFlag>IconIsMoniker</CommandFlag>
+				<Strings>
+					<ButtonText>Camel Case</ButtonText>
+					<LocCanonicalName>.CaseConverter.ToCamel</LocCanonicalName>
+				</Strings>
+			</Button>
+			<Button guid="CaseConverter" id="ToPascal" priority="0x0100" type="Button">
+				<Parent guid="CaseConverter" id="MenuGroup" />
+				<Icon guid="ImageCatalogGuid" id="WordWrap" />
+				<CommandFlag>IconIsMoniker</CommandFlag>
+				<Strings>
+					<ButtonText>Pascal Case</ButtonText>
+					<LocCanonicalName>.CaseConverter.ToPascal</LocCanonicalName>
+				</Strings>
+			</Button>
+		</Buttons>
+	</Commands>
+
+	<VisibilityConstraints>
+		<VisibilityItem guid="CaseConverter" id="EditMenu" context="GUID_TextEditorFactory" />
+		<VisibilityItem guid="CaseConverter" id="EditMenu" context="UICONTEXT_SolutionExists" />
+	</VisibilityConstraints>
+
+	<Symbols>
+		<GuidSymbol name="CaseConverter" value="{a7df8fb1-98b7-405f-9f00-d54f963177b3}">
+			<IDSymbol name="EditMenu" value="0x001" />
+			<IDSymbol name="CTXT_CODEWIN_GRP" value="0x002" />
+			<IDSymbol name="MenuGroup" value="0x100" />
+			<IDSymbol name="ToUpper" value="0x0201" />
+			<IDSymbol name="ToLower" value="0x0202" />
+			<IDSymbol name="ToCamel" value="0x0203" />
+			<IDSymbol name="ToPascal" value="0x0204" />
+			<IDSymbol name="Visibility" value="0x301" />
+		</GuidSymbol>
+	</Symbols>
+</CommandTable>
