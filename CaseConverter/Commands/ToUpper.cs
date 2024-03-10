@@ -1,4 +1,7 @@
-﻿namespace CaseConverter;
+﻿using EnvDTE;
+using Microsoft.VisualStudio.VCProjectEngine;
+
+namespace CaseConverter;
 
 [Command(PackageIds.ToUpper)]
 internal sealed class ToUpper
@@ -48,9 +51,14 @@ internal static class TextConvertHelper
         if (documnent is not null)
         {
             var spans = documnent.TextView.Selection.SelectedSpans;
-            foreach (var span in spans)
+            using (var edit = documnent.TextBuffer.CreateEdit())
             {
-                documnent.TextBuffer.Replace(span, ConvertText(span.GetText(), textCase));
+                foreach (var span in spans)
+                {
+                    edit.Replace(span, ConvertText(span.GetText(), textCase));
+                }
+                edit.Apply();
+
             }
         }
     }
