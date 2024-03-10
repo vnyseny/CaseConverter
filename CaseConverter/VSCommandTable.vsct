@@ -65,6 +65,12 @@
 			</Button>
 		</Buttons>
 	</Commands>
+	<KeyBindings>
+		<KeyBinding guid="CaseConverter" editor="guidVSStd97" id="ToUpper" mod1="Control Shift" key1="3" />
+		<KeyBinding guid="CaseConverter" editor="guidVSStd97" id="ToLower" mod1="Control Shift" key1="4" />
+		<KeyBinding guid="CaseConverter" editor="guidVSStd97" id="ToCamel" mod1="Control Shift" key1="5" />
+		<KeyBinding guid="CaseConverter" editor="guidVSStd97" id="ToPascal" mod1="Control Shift" key1="6" />
+	</KeyBindings>
 
 	<VisibilityConstraints>
 		<VisibilityItem guid="CaseConverter" id="EditMenu" context="GUID_TextEditorFactory" />
